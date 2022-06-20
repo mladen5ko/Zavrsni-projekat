@@ -33,6 +33,10 @@ public class NavPage {
         return driver.findElement(By.className("btnAbout"));
     }
 
+    public WebElement getLoginLink(){
+        return driver.findElement(By.className("btnLogin"));
+    }
+
     public WebElement getMyProfileLink(){
         return driver.findElement(By.className("btnProfile"));
     }
