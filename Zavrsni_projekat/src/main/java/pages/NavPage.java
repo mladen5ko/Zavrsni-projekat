@@ -55,11 +55,11 @@ public class NavPage {
     }
 
     public WebElement getCitiesFromAdmin(){
-        return driver.findElement(By.id("list-item-189"));
+        return driver.findElement(By.className("btnAdminCities"));
     }
 
     public WebElement getUsersFromAdmin(){
-        return driver.findElement(By.id("list-item-192"));
+        return driver.findElement(By.className("btnAdminUsers"));
     }
 
     public WebElement getLogOutButton(){
