@@ -111,7 +111,7 @@ public class LoginTests extends BasicTest {
     //Verifikovati da se u url-u stranice javlja /home ruta
 
     @Test(priority = 50)
-    public void login() throws InterruptedException {
+    public void login(){
         String email = "admin@admin.com";
         String password = "12345";
 
