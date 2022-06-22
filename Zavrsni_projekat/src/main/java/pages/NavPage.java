@@ -17,9 +17,14 @@ package pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class NavPage {
     private WebDriver driver;
+    private WebDriverWait wait;
 
     public NavPage(WebDriver driver) {
         this.driver = driver;
@@ -31,6 +36,10 @@ public class NavPage {
 
     public WebElement getAboutLink(){
         return driver.findElement(By.className("btnAbout"));
+    }
+
+    public WebElement getSignUplink(){
+        return driver.findElement(By.xpath("//a[contains(@class, 'btnLogin')][2]"));
     }
 
     public WebElement getLoginLink(){
@@ -62,18 +71,23 @@ public class NavPage {
     }
 
     public WebElement getEnFromLanguage(){
-        return driver.findElement(By.id("list-item-198"));
+        return driver.findElement(By.className("btnEN"));
     }
 
     public WebElement getEsFromLanguage(){
-        return driver.findElement(By.id("list-item-200"));
+        return driver.findElement(By.className("btnES"));
     }
 
     public WebElement getFrFromLanguage(){
-        return driver.findElement(By.id("list-item-202"));
+        return driver.findElement(By.className("btnFR"));
     }
 
     public WebElement getCnFromLanguage(){
-        return driver.findElement(By.id("list-item-204"));
+        return driver.findElement(By.className("btnCN"));
+    }
+
+    public void waitUntilLoguoutButtonShowUp(){
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.className("btnLogout")));
     }
 }
