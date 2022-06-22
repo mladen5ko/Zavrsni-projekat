@@ -90,4 +90,8 @@ public class NavPage {
         wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.presenceOfElementLocated(By.className("btnLogout")));
     }
+
+    public WebElement getHeaderOfPage(){
+        return driver.findElement(By.className("display-2"));
+    }
 }
